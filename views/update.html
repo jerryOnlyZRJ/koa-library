@@ -3,34 +3,22 @@
 
 {% block content %}
 <div class="country-update">
-    <h1>Update Book: Australiaa</h1>
+    <h1>Update Book: {{data.name}}</h1>
     <div class="country-form">
-        <form id="w0" action="http://192.168.64.2/index.php?r=country%2Fupdate&amp;id=AU" method="post">
-            <input type="hidden" name="_csrf" value="1ZPQES10mGQwtb7VoOehP-MeP84G84q8fgcph5Lz0hKxy5V3HBChMQaBj6ySl-J-0kt9hVWa898HXU7i0b26VQ==">
-            <div class="form-group field-country-code required">
-                <label class="control-label" for="country-code">Code</label>
-                <input type="text" id="country-code" class="form-control" name="Country[code]" value="AU"
-                    maxlength="2" aria-required="true">
-
-                <div class="help-block"></div>
-            </div>
-            <div class="form-group field-country-name required">
-                <label class="control-label" for="country-name">Name</label>
-                <input type="text" id="country-name" class="form-control" name="Country[name]" value="Australiaa"
-                    maxlength="52" aria-required="true">
-
-                <div class="help-block"></div>
-            </div>
-            <div class="form-group field-country-population">
-                <label class="control-label" for="country-population">Population</label>
-                <input type="text" id="country-population" class="form-control" name="Country[population]"
-                    value="18886000">
-
-                <div class="help-block"></div>
-            </div>
-            <div class="form-group">
-                <button type="submit" class="btn btn-success">Save</button> </div>
-        </form>
+        {% for item in data %}
+        {% if loop.key === "id" %}
+        <input name="book-id" type="text" hidden value="{{item}}">
+        {% else %}
+        <div class="form-group field-country-code required">
+            <label class="control-label" for="country-code">{{ loop.key }}</label>
+            <input type="text" id="country-code" class="form-control" name="Country[code]" value="{{ item }}"
+                aria-required="true">
+            <div class="help-block"></div>
+        </div>
+        {% endif %}
+        {% endfor %}
+        <div class="form-group">
+            <button type="submit" class="btn btn-success">Save</button> </div>
     </div>
 </div>
 {% endblock %}

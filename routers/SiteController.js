@@ -25,8 +25,7 @@ router.get('/view', async(ctx, next) => {
 //配置与models配合的数据路由
 router.get('/update', async(ctx, next) => {
 	ctx.body = await ctx.render('update', {
-    	// name: 'Jerry',
-    	// data: 'Welcome to koa'
+    	data: await bookModel.actionView(ctx.query.id)
     })
 })
 
