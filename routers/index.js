@@ -1,6 +1,7 @@
 const Router = require('koa-router')
-const router = new Router()
 const indexModel = require('../models/index')
+
+const router = new Router()
 
 //配置根路由
 router.get('/', async(ctx, next) => {
