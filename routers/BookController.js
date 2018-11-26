@@ -1,12 +1,12 @@
 const Router = require('koa-router')
-const IndexModel = require('../models/index')
+const BookModel = require('../models/Book')
 
 const router = new Router()
-const indexModel = new IndexModel()
+const bookModel = new BookModel()
 
-//配置与models配合的数据路由
-// router.get('/api/index', async (ctx, next) => {
-//     ctx.body = await indexModel.actionIndex()
-// })
+// 配置与models配合的数据路由
+router.get('/index', async (ctx, next) => {
+    ctx.body = await indexModel.actionIndex()
+})
 
 module.exports = router

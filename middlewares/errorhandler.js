@@ -30,7 +30,7 @@ const errorHandler = {
       await next();
       if (ctx.status !== 404) return;
       ctx.status = 404;
-      ctx.body = await ctx.render("common/404");
+      ctx.body = await ctx.render("404");
     });
   }
 };

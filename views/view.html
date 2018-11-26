@@ -2,25 +2,19 @@
 {% block title %}View{% endblock %}
 {% block content %}
 <div class="country-view">
-    <h1>Australiaa</h1>
+    <h1>{{ data.name }}</h1>
     <p>
         <a class="btn btn-primary" href="#">Update</a>
-        <a class="btn btn-danger" href="#" data-confirm="Are you sure you want to delete this item?"
-            data-method="post">Delete</a> </p>
+        <a class="btn btn-danger" href="#" data-confirm="Are you sure you want to delete this item?" data-method="post">Delete</a>
+    </p>
     <table id="w0" class="table table-striped table-bordered detail-view">
         <tbody>
-            <tr>
-                <th>Code</th>
-                <td>AU</td>
-            </tr>
-            <tr>
-                <th>Name</th>
-                <td>Australiaa</td>
-            </tr>
-            <tr>
-                <th>Population</th>
-                <td>18886000</td>
-            </tr>
+            {% for item in data %}
+                <tr>
+                    <th>{{ loop.key }}</th>
+                    <td>{{ item }}</td>
+                </tr>
+            {% endfor %}
         </tbody>
     </table>
 </div>
