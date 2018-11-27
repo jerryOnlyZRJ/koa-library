@@ -28,46 +28,62 @@
 <script>
     jQuery(function ($) {
         jQuery('#w0').yiiActiveForm([{
-            "id": "country-code",
-            "name": "code",
-            "container": ".field-country-code",
-            "input": "#country-code",
-            "validate": function (attribute, value, messages, deferred, $form) {
-                yii.validation.required(value, messages, {
-                    "message": "Code cannot be blank."
-                });
-                yii.validation.string(value, messages, {
-                    "message": "Code must be a string.",
-                    "max": 2,
-                    "tooLong": "Code should contain at most 2 characters.",
-                    "skipOnEmpty": 1
-                });
-            }
-        }, {
-            "id": "country-name",
+            "id": "book-name",
             "name": "name",
-            "container": ".field-country-name",
-            "input": "#country-name",
+            "container": ".field-book-name",
+            "input": "#book-name",
             "validate": function (attribute, value, messages, deferred, $form) {
                 yii.validation.required(value, messages, {
-                    "message": "Name cannot be blank."
+                    "message": "书名 cannot be blank."
                 });
                 yii.validation.string(value, messages, {
-                    "message": "Name must be a string.",
-                    "max": 52,
-                    "tooLong": "Name should contain at most 52 characters.",
+                    "message": "书名 must be a string.",
+                    "max": 50,
+                    "tooLong": "书名 should contain at most 50 characters.",
                     "skipOnEmpty": 1
                 });
             }
         }, {
-            "id": "country-population",
-            "name": "population",
-            "container": ".field-country-population",
-            "input": "#country-population",
+            "id": "book-author",
+            "name": "author",
+            "container": ".field-book-author",
+            "input": "#book-author",
+            "validate": function (attribute, value, messages, deferred, $form) {
+                yii.validation.required(value, messages, {
+                    "message": "作者 cannot be blank."
+                });
+                yii.validation.string(value, messages, {
+                    "message": "作者 must be a string.",
+                    "max": 50,
+                    "tooLong": "作者 should contain at most 50 characters.",
+                    "skipOnEmpty": 1
+                });
+            }
+        }, {
+            "id": "book-date",
+            "name": "date",
+            "container": ".field-book-date",
+            "input": "#book-date",
+            "validate": function (attribute, value, messages, deferred, $form) {
+                yii.validation.required(value, messages, {
+                    "message": "出版日期 cannot be blank."
+                });
+                yii.validation.string(value, messages, {
+                    "message": "出版日期 must be a string.",
+                    "max": 50,
+                    "tooLong": "出版日期 should contain at most 50 characters.",
+                    "skipOnEmpty": 1
+                });
+            }
+        }, {
+            "id": "book-score",
+            "name": "score",
+            "container": ".field-book-score",
+            "input": "#book-score",
             "validate": function (attribute, value, messages, deferred, $form) {
                 yii.validation.number(value, messages, {
                     "pattern": /^\s*[+-]?\d+\s*$/,
-                    "message": "Population must be an integer.",
+                    "message": "评分 must be an integer.",
                     "skipOnEmpty": 1
                 });
             }
