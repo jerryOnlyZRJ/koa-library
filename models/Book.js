@@ -14,16 +14,16 @@ class IndexModel {
         const options = {
             method: 'POST',
             uri: `${api}/create.php`,
-            body: JSON.stringify(body),
+            body: body,
             json: true // Automatically stringifies the body to JSON
         }
-        return request(options).then(data => JSON.parse(data))
+        return request(options)
     }
     actionUpdate(body) {
         const options = {
             method: 'POST',
             uri: `${api}/update.php`,
-            body: JSON.stringify(body)
+            body: body
         }
         return request(options).then(data => JSON.parse(data))
     }
@@ -31,7 +31,7 @@ class IndexModel {
         const options = {
             method: 'POST',
             uri: `${api}/delete.php`,
-            body: JSON.stringify(body)
+            body: body
         }
         return request(options).then(data => JSON.parse(data))
     }
