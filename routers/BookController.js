@@ -5,7 +5,7 @@ const router = new Router()
 const bookModel = new BookModel()
 
 // 配置与models配合的数据路由
-router.get('/index', async (ctx, next) => {
+router.post('/create', async (ctx, next) => {
     ctx.body = await indexModel.actionIndex()
 })
 
