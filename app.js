@@ -29,3 +29,5 @@ app.use(router.routes(), router.allowedMethods());
 app.listen(3000, () => {
     console.log('website is starting at port 3000')
 });
+
+module.exports = app
