@@ -12,7 +12,7 @@ router.get('/view', async (ctx, next) => {
     ctx.body = await bookModel.actionView(ctx.query.id)
 })
 
-router.get('/delete', async (ctx, next) => {
+router.post('/delete', async (ctx, next) => {
     ctx.body = await bookModel.actionDelete({
         id: ctx.query.id
     })

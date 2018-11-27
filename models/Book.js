@@ -23,7 +23,8 @@ class IndexModel {
         const options = {
             method: 'POST',
             uri: `${api}/update.php`,
-            body: body
+            body: body,
+            json: true
         }
         return request(options).then(data => JSON.parse(data))
     }
@@ -31,7 +32,8 @@ class IndexModel {
         const options = {
             method: 'POST',
             uri: `${api}/delete.php`,
-            body: body
+            body: body,
+            json: true
         }
         return request(options).then(data => JSON.parse(data))
     }
