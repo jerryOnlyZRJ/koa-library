@@ -6,13 +6,18 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "pm2 start pm2.json",
-    "start:dev": "supervisor app.js"
+    "start:dev": "supervisor app.js",
+    "babel": "babel --presets @babel/preset-env public/scripts/debounce.js -o public/scripts/debounce.es5.js"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/cli": "^7.1.5",
+    "@babel/core": "^7.1.6",
+    "@babel/preset-env": "^7.1.6",
     "jest": "^22.3.0",
     "pm2": "^2.10.4",
+    "rize": "^0.8.0",
     "supervisor": "^0.12.0"
   },
   "dependencies": {

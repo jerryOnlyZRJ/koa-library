@@ -49,13 +49,4 @@
 {% endblock %}
 {% block scripts %}
 <script src="/scripts/yii.gridView.js"></script>
-<script>
-    jQuery(function ($) {
-        jQuery('#w0').yiiGridView({
-            "filterUrl": "\/?r=country",
-            "filterSelector": "#w0-filters input, #w0-filters select",
-            "filterOnFocusOut": true
-        });
-    });
-</script>
 {% endblock %}

@@ -1,3 +1,3 @@
 module.exports = {
-  testMatch: ['<rootDir>/tests/*.js']
+  testMatch: ['<rootDir>/tests/*.spec.js']
 }
