@@ -7,11 +7,11 @@
     <div class="country-form">
         {% for item in data %}
         {% if loop.key === "id" %}
-        <input name="book-id" type="text" hidden value="{{item}}">
+        <input id="book-id" type="text" hidden value="{{item}}">
         {% else %}
         <div class="form-group field-country-code required">
             <label class="control-label" for="country-code">{{ loop.key }}</label>
-            <input type="text" id="country-code" class="form-control" name="Country[code]" value="{{ item }}"
+            <input type="text" id="country-code" class="form-control" name="{{ loop.key }}" value="{{ item }}"
                 aria-required="true">
             <div class="help-block"></div>
         </div>
@@ -25,6 +25,7 @@
 {% block scripts %}
 <script src="/scripts/yii.validation.js"></script>
 <script src="/scripts/yii.activeForm.js"></script>
+<script defer src="/scripts/update.js"></script>
 <script>
     jQuery(function ($) {
         jQuery('#w0').yiiActiveForm([{
