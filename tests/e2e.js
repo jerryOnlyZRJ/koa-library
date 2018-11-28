@@ -1,7 +1,10 @@
 const Rize = require('rize')
-const rize = new Rize({
-    headless: false
-})
+// 开启可视化e2e测试
+// const rize = new Rize({
+//     headless: false
+// })
+const rize = new Rize()
+
 // test view logic
 rize
     .goto('http://localhost:3000/')
