@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npm run test:unit && npm run test:e2e",
+    "test": "npm run test:unit",
     "test:unit": "jest --coverage --forceExit",
     "test:e2e": "node tests/e2e.js",
     "start": "pm2 start pm2.json",
@@ -18,7 +18,7 @@
     }
   },
   "lint-staged": {
-    "*.js": [
+    "**/*.js": [
       "prettier --write",
       "eslint --fix",
       "git add"
@@ -54,6 +54,7 @@
     "koa-static": "^4.0.3",
     "koa-swig": "^2.2.1",
     "log4js": "^3.0.6",
+    "prettier": "^1.15.2",
     "request": "^2.83.0",
     "request-promise": "^4.2.2"
   }
