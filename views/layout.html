@@ -56,17 +56,11 @@
     <script src="/scripts/bootstrap.js"></script>
     <script src="/scripts/system.min.js"></script>
     <script src="https://cdn.polyfill.io/v2/polyfill.js?features=default,fetch"></script>
-    <script>
-        if(!System.support.localStorage){
-            var script =  document.createElement('script')
-            script.src = '/scripts/debounce.es5.js'
-            document.body.appendChild(script)
-        }
-    </script>
     <script type="module">
         import debounce from '/scripts/debounce.js'
         window.debounce = debounce
     </script>
+    <script nomodule src="/scripts/debounce.es5.js"></script>
     {% block scripts %}{% endblock %}
 
 </body>
