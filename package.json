@@ -8,7 +8,7 @@
     "test:unit": "jest --coverage --forceExit",
     "test:e2e": "node tests/e2e.js",
     "start": "pm2 start pm2.json",
-    "start:dev": "supervisor app.js",
+    "start:dev": "cross-env NODE_ENV=development supervisor app.js",
     "babel": "babel --presets @babel/preset-env public/scripts/debounce.js -o public/scripts/debounce.es5.js"
   },
   "husky": {
@@ -49,6 +49,7 @@
   "dependencies": {
     "cheerio": "^1.0.0-rc.2",
     "co": "^4.6.0",
+    "cross-env": "^5.2.0",
     "koa": "^2.5.1",
     "koa-bodyparser": "^4.2.1",
     "koa-router": "^7.4.0",
