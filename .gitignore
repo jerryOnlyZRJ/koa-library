@@ -3,3 +3,6 @@ node_modules/
 
 #logs
 logs/
+
+#MAC
+.DS_Store
